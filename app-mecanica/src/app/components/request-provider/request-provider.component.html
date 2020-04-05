@@ -1,0 +1,51 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>{{provider.nome}}</ion-title>
+        <ion-buttons slot="end">
+            <ion-button (click)="dismiss()">
+                <ion-icon slot="end" name="close"></ion-icon>
+                Close
+            </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <div class="ion-padding">
+        <ion-item>
+
+            <ion-label>Maquina</ion-label>
+            <ion-select value="veiculo" [(ngModel)]="request.tipoMaquina" placeholder="Tipo Maquina">
+                <ion-select-option value="automovel">Automovel</ion-select-option>
+                <ion-select-option value="motorizada">Motorizada</ion-select-option>
+                <ion-select-option value="barco">Barco</ion-select-option>
+                <ion-select-option value="gerador">Gerador</ion-select-option>
+            </ion-select>
+        </ion-item>
+        <ion-item>
+            <ion-label position="floating">Matrícula</ion-label>
+            <ion-input [(ngModel)]="request.matricula" type="text"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label position="floating">Marca</ion-label>
+            <ion-input [(ngModel)]="request.marca" type="text"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label position="floating">Modelo</ion-label>
+            <ion-input [(ngModel)]="request.modelo" type="text"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label position="floating">Local</ion-label>
+            <ion-input [(ngModel)]="request.local" type="text"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label position="floating">Description</ion-label>
+            <ion-textarea [(ngModel)]="request.avaria" rows="5" type="text"></ion-textarea>
+        </ion-item>
+    </div>
+    <div>
+        <ion-button (click)="enviarPedido()" expand="block">
+            Enviar Pedido
+        </ion-button>
+    </div>
+</ion-content>

@@ -1,0 +1,41 @@
+<ion-content>
+    <div style="margin-top: 4em;">
+        <div style="text-align: center;">
+            <ion-text color="primary">
+                <h1>Registro</h1>
+            </ion-text>
+        </div>
+        <ion-item>
+            <ion-label position="floating">User Name</ion-label>
+            <ion-input [(ngModel)]="register.userName" type="text"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label position="floating">E-Mail</ion-label>
+            <ion-input [(ngModel)]="register.email" type="email"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label>Data Aniversáro</ion-label>
+            <ion-datetime [(ngModel)]="register.dob" display-format="DD-MM-YYYY"></ion-datetime>
+        </ion-item>
+        <ion-item>
+            <ion-label position="floating">Palavra passe</ion-label>
+            <ion-input [(ngModel)]="register.password" type="password"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label slot="start">Cliente</ion-label>
+            <ion-toggle [(ngModel)]="register.isClient"></ion-toggle>
+        </ion-item>
+    </div>
+    <div>
+        <ion-button (click)="onSubmmit()" expand="block">
+            Regitrar
+        </ion-button>
+    </div>
+    <div style="text-align: center;">
+        <p>Já possui uma conta ?</p>
+        <ion-button (click)="onLogin()" expand="block" fill="clear">
+            Login
+        </ion-button>
+    </div>
+</ion-content>

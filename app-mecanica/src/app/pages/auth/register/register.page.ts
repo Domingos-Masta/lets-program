@@ -1,0 +1,30 @@
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
+@Component({
+  selector: 'app-register',
+  templateUrl: './register.page.html',
+  styleUrls: ['./register.page.scss'],
+})
+export class RegisterPage implements OnInit {
+  register = {
+    userName: '',
+    email: '',
+    dob: '',
+    password: '',
+    isClient: true
+  }
+  constructor(private routerCtrl: Router) { }
+
+  ngOnInit() {
+  }
+
+  onSubmmit(){
+    this.register.isClient ? this.routerCtrl.navigateByUrl('tabs-client') : this.routerCtrl.navigateByUrl('tabs-prestador');
+  }
+  
+  onLogin(){
+    this.routerCtrl.navigateByUrl('login');
+  }
+
+}

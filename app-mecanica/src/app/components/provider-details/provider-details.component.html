@@ -1,0 +1,47 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>{{provider.nome}}</ion-title>
+        <ion-buttons slot="end">
+            <ion-button (click)="dismiss()">
+                <ion-icon slot="end" name="close"></ion-icon>
+                Close
+            </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-card>
+        <ion-item lines="none">
+            <ion-avatar slot="start">
+                <img [src]="provider.photo" offset="100" />
+            </ion-avatar>
+            <ion-label>
+                <h2>{{provider.nome}}</h2>
+                <p>Experiência: {{provider.experiencia}}</p>
+            </ion-label>
+        </ion-item>
+        <ion-card-content>
+            <p>{{provider.sobre}}</p>
+        </ion-card-content>
+    </ion-card>
+    <div class="ion-padding">
+        <ion-text color="primary">
+            <h3>Oficinas</h3>
+        </ion-text>
+    </div>
+    <ion-list *ngIf="provider.oficina">
+        <ion-card *ngFor="let oficina of provider.oficina">
+            <img *ngIf="oficina.photo" [src]="oficina.photo">
+
+            <ion-card-content>
+                <ion-card-title>
+                    <h2>{{oficina.nome}}</h2>
+                    <h3>{{oficina.local}}</h3>
+                </ion-card-title>
+                <p>{{oficina.sobre}}</p>
+            </ion-card-content>
+        </ion-card>
+    </ion-list>
+
+</ion-content>
